@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTS(Happiness) comes from Heaven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- 遊戲開始popup視窗 -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>遊戲規則說明</h2>
+        <p>使用鍵盤方向鍵左右移動，接到正式販售之菸彈口味則得分，接到無此口味的則扣分。</p>
+        <p>遊戲持續30秒，盡量獲得最高分數。</p>
+        <button id="startBtn">開始遊戲</button>
+    </div>
+</div>
+
+<!-- 遊戲結束popup視窗 -->
+<div id="endGameModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>遊戲結束</h2>
+        <p id="finalScore">您的最終得分是：0</p>
+        <button id="restartBtn">重新開始</button>
+    </div>
+</div>
+
+
+<!-- 時間條 -->
+<div id="timeBarContainer">
+    <div id="timeBar"></div>
+</div>
+
+<!-- 遊戲區塊 -->
+<div id="gameArea">
+    <div id="player"></div>
+</div>
+
+    <div id="controls">
+        <button id="moveLeft">左</button>
+        <button id="moveRight">右</button>
+    </div>    
+ 
+    <div id="scoreBoard">
+        <p>Score: <span id="score">0</span></p>
+        <p>Time left: <span id="timeLeft">30</span>s</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
