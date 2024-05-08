@@ -1,9 +1,9 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;  
-    align-items: center;      
-    min-height: 100vh;        /* 確保佔滿全螢幕高度 */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     margin: 0;                
 }
 
@@ -29,8 +29,6 @@ body {
     background-clip: content-box;
 }
 
-
-
 #scoreBoard {
     position: fixed;  /* 固定在視窗頂部 */
     top: 10px;
@@ -43,16 +41,17 @@ body {
 }
 
 .flavor {
-    width: 20px;
-    height: 20px;
-    background-color: red;
+    width: 40px; 
+    height: 40px; 
     position: absolute;
+    background-size: cover;  
+    background-repeat: no-repeat;
 }
 
 #controls {
     display: none;
     position: fixed; /* 使用fixed以便在頁面底部居中 */
-    bottom: 10%;     /* 從底部略微上移 */
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -64,38 +63,77 @@ body {
 
 /* modal區塊 */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;          
+    position: fixed;        
+    z-index: 1;             
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;            
+    height: 100%;          
+    overflow: auto;         
+    background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    width: 80%;             
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    background-color: #fefefe;
+    position: absolute;     
+    top: 40%;               
+    left: 50%;             
+    transform: translate(-50%, -50%); /* 用transform向上和向左移動50%的自身寬高 */
+    text-align: center;     
 }
+
 
 .close {
-    color: #aaa;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
+    cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+#finalScore {
+    margin: 20px 0;
+    font-size: 24px; /* 調整文字大小 */
+}
+
+#flavorInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.flavorImageContainer {
+    width: 100px; 
+    display: flex; 
+    justify-content: center; 
+}
+.flavorImageContainer img {
+    width: 100%; 
+    height: auto; 
+}
+
+.flavorDescription {
+    margin-top: 10px; /* 於圖片下方留出間隙 */
+}
+#endGameModal .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 確保子元素在中心對齊 */
+}
+
+#restartBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
     cursor: pointer;
+    display: block;
+    margin: 20px auto 0; 
+    align-self: center;
 }
 
 #startBtn {
@@ -120,7 +158,6 @@ body {
     background-color: #4CAF50; /* 時間條的顏色 */
     transition: width 1s linear; /* 平滑過渡效果 */
 }
-
 
 
 @media (max-width: 600px) {
