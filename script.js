@@ -107,16 +107,17 @@ document.addEventListener("DOMContentLoaded", function () {
       flavorCounts[a] > flavorCounts[b] ? a : b
     );
     let imagePath = `images/${maxFlavor}.jpg`;
-
-    // 創建新圖片元素並設置其屬性
     let flavorImage = document.createElement("img");
     flavorImage.src = imagePath;
     flavorImage.style.width = "150px";
     flavorImage.style.height = "auto";
 
-    // 插入圖片到按鈕之前
     let restartButton = document.getElementById("restartBtn");
     modalContent.insertBefore(flavorImage, restartButton);
+
+    // 更新口味名稱
+    document.getElementById("flavorName").textContent =
+      maxFlavor.charAt(0).toUpperCase() + maxFlavor.slice(1);
 
     const endModal = document.getElementById("endGameModal");
     endModal.style.display = "block";
